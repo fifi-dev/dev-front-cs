@@ -57,7 +57,7 @@ for the database:
 
 - [ ] Run a local development server like Mamp, Laragon or Xamp
 
-- [ ] Create a database named careForU & run migratios:
+- [ ] Create a database named cs-bdd & run migratios:
 
   ```sh
    php artisan migrate
