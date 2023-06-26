@@ -8,7 +8,7 @@ Node js server for realtime chat app
 
 #### 💡 Features :
 
-- socket io
+- coming soon
 
 
 #### 👩🏾‍💻 Built With :
