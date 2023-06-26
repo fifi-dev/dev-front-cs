@@ -13,6 +13,13 @@ module.exports = {
     theme: {
         extend: {
 
+            colors: {
+                'primary': '#DD4B39',
+                'menu': '#1D1D1D',
+                'bg-color': '#FBFDFF',
+                'link-active': 'rgba(255, 255, 255, 0.10)'
+            },
+
             screens: {
                 'max-2xl': {'max': '1535px'},
                 // => @media (max-width: 1535px) { ... }
@@ -37,6 +44,7 @@ module.exports = {
 
                 'min-header': {'min': '910px'},
             },
+
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },

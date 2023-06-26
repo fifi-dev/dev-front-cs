@@ -7,7 +7,7 @@
 </script>
 
 <template>
-    <div class="menu h-screen bg-gray-800 pt-4">
+    <div class="menu h-screen bg-menu pt-4">
         <nav>
             <NavLink :href="route('dashboard')" :active="route().current('dashboard')" class="pl-8 py-4 w-full">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-4">

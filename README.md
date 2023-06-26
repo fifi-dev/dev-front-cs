@@ -4,7 +4,7 @@
 
 #### 📝 Description :
 
-Node js server for realtime chat app
+Implementation of a front-end website model.
 
 #### 💡 Features :
 
