@@ -41,7 +41,7 @@ const logout = () => {
                 <div class="max-w-full mx-auto  ">
                     <div class="flex justify-between h-16">
                         <!-- Logo -->
-                        <div class="flex items-center w-1/6 bg-red-500">
+                        <div class="flex items-center w-1/6 bg-primary">
                             <div class="w-32 m-auto">
                                 <img src="/assets/img/logo-white.png" alt="Logo Charlie Solutions"/>
                             </div>
@@ -74,12 +74,42 @@ const logout = () => {
                                 </button>
                             </div>
                             <div class="hidden  ml-0   sm:flex sm:items-center pr-8 ">
-                                <div class="mx-3 relative">
+                                <!-- Notifications-->
+                                <div class=" relative w-fit ">
+                                    <Dropdown align="right" width="48">
+                                        <template #trigger>
+                                        <span>
+                                                <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent  font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
+                                                    <div class=" bg-red-500 absolute text-[8px] py-1 px-2 top-0 left-6 rounded-2xl text-white">25</div>
+                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                                                </svg>
+                                                </button>
+                                            </span>
+                                        </template>
+
+                                        <template #content>
+                                            <!-- Notification -->
+                                            <DropdownLink :href="route('home')">
+                                                Notification 1
+                                            </DropdownLink>
+                                            <!-- Notification -->
+                                            <DropdownLink :href="route('home')">
+                                                Notification 2
+                                            </DropdownLink>
+                                            <!-- Notification -->
+                                            <DropdownLink :href="route('home')">
+                                                Notification 3
+                                            </DropdownLink>
+                                        </template>
+                                    </Dropdown>
+                                </div>
+                                <div class="mr-3 relative">
                                     <!-- Teams Dropdown -->
                                     <Dropdown v-if="$page.props.jetstream.hasTeamFeatures" align="right" width="60">
                                         <template #trigger>
                                             <span class="inline-flex rounded-md">
-                                                <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
+                                                <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500  hover:text-gray-700 focus:outline-none focus:bg-gray-50 active:bg-gray-50 transition ease-in-out duration-150">
                                                     {{ $page.props.auth.user.current_team.name }}
 
                                                     <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
@@ -185,6 +215,7 @@ const logout = () => {
             <!-- Page Content -->
             <div class="flex">
                 <div class=" w-1/6 " :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}">
+                    <!-- sidebar menu -->
                     <Menu />
                 </div>
                 <main :class="{'w-5/6': showingNavigationDropdown, 'w-full': ! showingNavigationDropdown}" class="overflow-scroll h-screen">
