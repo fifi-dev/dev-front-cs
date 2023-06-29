@@ -36,20 +36,20 @@ const logout = () => {
         <Banner />
 
         <div class="min-h-screen bg-gray-100">
-            <div class="bg-white ">
+            <div class="bg-white  " :class="{'max-md:bg-menu': showingNavigationDropdown, 'bg-white': ! showingNavigationDropdown}">
                 <!-- Header -->
                 <div class="max-w-full mx-auto  ">
                     <div class="flex justify-between h-16">
                         <!-- Logo -->
-                        <div class="flex items-center w-1/6 bg-primary">
+                        <div class="flex items-center w-1/6 max-md:w-2/6 bg-primary max-md:px-4" >
                             <div class="w-32 m-auto">
                                 <img src="/assets/img/logo-white.png" alt="Logo Charlie Solutions"/>
                             </div>
                         </div>
-                        <div class="flex justify-between w-5/6 items-center">
+                        <div class="flex max-md:justify-end justify-between w-5/6 items-center">
                         <!-- Hamburger -->
                             <div class=" flex items-end">
-                                <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400   focus:outline-none hover:scale-11  transition duration-150 ease-in-out" @click="showingNavigationDropdown = ! showingNavigationDropdown">
+                                <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400  max-md:mr-4  focus:outline-none hover:scale-11  transition duration-150 ease-in-out" @click="showingNavigationDropdown = ! showingNavigationDropdown">
                                     <svg
                                         class="h-6 w-6"
                                         stroke="currentColor"
@@ -73,9 +73,9 @@ const logout = () => {
                                     </svg>
                                 </button>
                             </div>
-                            <div class="hidden  ml-0   sm:flex sm:items-center pr-8 ">
+                            <div class="hidden ml-0   sm:flex sm:items-center pr-8 ">
                                 <!-- Notifications-->
-                                <div class=" relative w-fit ">
+                                <div class=" max-md:hidden relative w-fit mr-2 ">
                                     <Dropdown align="right" width="48">
                                         <template #trigger>
                                         <span>
@@ -122,7 +122,7 @@ const logout = () => {
                                         <template #content>
                                             <!-- Account Management -->
                                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                                Manage Account
+                                                Gérer son compte
                                             </div>
 
                                             <DropdownLink :href="route('profile.show')">
@@ -152,11 +152,11 @@ const logout = () => {
 
             <!-- Page Content -->
             <div class="flex">
-                <div class=" w-1/6 transition ease-in-out duration-150" :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}">
+                <div class=" w-1/6 max-lg:w-2/6 max-md:absolute max-md:w-full transition ease-in-out duration-150" :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}">
                     <!-- sidebar menu -->
                     <Menu />
                 </div>
-                <main :class="{'w-5/6': showingNavigationDropdown, 'w-full': ! showingNavigationDropdown}" class="overflow-scroll h-screen transition ease-in-out duration-150">
+                <main :class="{'w-5/6 max-lg:w-4/6 max-md:hidden': showingNavigationDropdown, 'w-full max-md:mx-4': ! showingNavigationDropdown}" class="overflow-scroll h-screen transition ease-in-out duration-150 ">
                     <slot />
                 </main>
             </div>
