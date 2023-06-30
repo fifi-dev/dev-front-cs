@@ -77,16 +77,15 @@ import DataCard from '@/Components/DataCard.vue';
                 <div class="bg-white shadow-xl sm:rounded-lg p-4 flex items-center max-lg:block">
                     <!-- search zone form -->
                     <div class="w-2/5 max-lg:w-full">
-                        <form @submit.prevent="submit">
-                            <TextInput
-                                id="searchZone"
-                                type="search"
-                                class="mt-1 block bg-gray-100 !text-gray-100 w-full rounded-none"
-                                required
-                                autofocus
-                                placeholder="Rechercher une zone"
-                            />
-                        </form> 
+                        <TextInput
+                            id="searchZone"
+                            v-model="searchValue"
+                            type="search"
+                            class="mt-1 block bg-gray-100 !text-gray-900 w-full rounded-none"
+                            required
+                            autofocus
+                            placeholder="Rechercher une zone"
+                        />
                     </div>
                     <div class="flex ml-3 w-3/5 max-lg:w-full max-lg:mt-4 justify-end max-lg:justify-start max-md:grid max-md:grid-cols-2 gap-4 items-center h-full">
                         <!-- Current Zone -->
@@ -237,7 +236,7 @@ import DataCard from '@/Components/DataCard.vue';
                 <div class="bg-white overflow-hidden overflow-x-scroll  shadow-xl sm:rounded-lg p-4 mt-4 mb-20">
                     <div class="flex items-center pl-3">
                         <!-- select All-->
-                        <Checkbox :value="selectAll"/>
+                        <Checkbox v-model="selectAll" />
                         <!-- Delete Button -->
                         <PrimaryButton class=" bg-red-500 rounded-xs ml-3 hover:bg-red-600">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-3">
@@ -325,7 +324,8 @@ import DataCard from '@/Components/DataCard.vue';
                             <tbody >
                                 <tr v-for="(material,key) in sortedMaterials" :key="key" >
                                     <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        <Checkbox :value="selectAll"/>
+                                        
+                                        <input class="rounded border-gray-300 focus:ring-1   text-sky-700  shadow-sm focus:ring-trasparent" type="checkbox" v-model="selected" :value="material.id" number>
                                     </td>
                                     <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                         {{ material.type }} 
@@ -393,9 +393,11 @@ import axios from "axios";
 export default {
     data(){
         return {
+            searchValue: '',
             materials:[],
             currentSort:'name',
-            currentSortDir:'asc'
+            currentSortDir:'asc',
+            selected: []
         }
     },
     mounted(){
@@ -420,22 +422,48 @@ export default {
                 })
         },
         sort:function(s){
+            //sorting by the same column and flipping the direction
             if(s === this.currentSort) {
                 this.currentSortDir = this.currentSortDir==='asc'?'desc':'asc';
             }
             this.currentSort = s;
-        }
+        },
     },
     computed:{
+        //reversing the numbers based on the direction of the sort
         sortedMaterials:function() {
-        return this.materials.sort((a,b) => {
+            return this.materials.sort((a,b) => {
             let modifier = 1;
             if(this.currentSortDir === 'desc') modifier = -1;
             if(a[this.currentSort] < b[this.currentSort]) return -1 * modifier;
             if(a[this.currentSort] > b[this.currentSort]) return 1 * modifier;
             return 0;
         });
+        },
+        searchByZone:function() {
+            sortedMaterials = sortedMaterials.filter((item) => {
+            return item.current_area
+                .toUpperCase()
+                .includes(this.searchValue.toUpperCase())
+            })
+            return sortedMaterials
+        },
+        selectAll: {
+            get: function () {
+                return this.materials ? this.selected.length == this.materials.length : false;
+            },
+            set: function (value) {
+                var selected = [];
+
+                if (value) {
+                    this.materials.forEach(function (material) {
+                        selected.push(material.id);
+                    });
+                }
+
+                this.selected = selected;
+            }
         }
-    }
+}
 }
 </script>
