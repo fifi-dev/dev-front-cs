@@ -8,8 +8,12 @@ Implementation of a front-end website model.
 
 #### 💡 Features :
 
-- coming soon
+- Working Sorting & Deletion
+  
+<p align="center">
+<img src="https://i.ibb.co/LSd76Dx/Capture-d-e-cran-2023-06-30-a-22-34-32.png" alt="Capture-d-e-cran-2023-06-30-a-22-34-32" border="0"> </p>
 
+- Crud : you can check the Material Controller 
 
 #### 👩🏾‍💻 Built With :
 
@@ -74,6 +78,19 @@ for the database:
   ```sh
    npm run dev
   ```
+
+  ## 💬 Let's Talk about the project
+
+#### My toughts
+
+"J'ai beaucoup appreciée integrer la maquette, cela m'a permis de stimuler ma creativité tout en prenant en compte le design déjà existant.
+Le design est bien malgré quelques détails (drapaux, couleurs des boutons). Cependant, L'UX de la maquette ne permet pas de comprendre clairement certains éléments "
+
+#### Time spent
+
+- [x] Monday evening
+- [x] Thursday evening
+- [x] Friday
 
 #### 🤝 Contributing :
 
