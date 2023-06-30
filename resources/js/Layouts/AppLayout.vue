@@ -39,7 +39,7 @@ const logout = () => {
                 <div class="max-w-full mx-auto  ">
                     <div class="flex justify-between h-16">
                         <!-- Logo -->
-                        <div class="flex items-center bg-primary max-md:px-4 transition-all duration-500 delay-500" :class="{' w-1/5  max-lg:w-2/6 max-md:w-2/5 max-md:items-center ': showingNavigationDropdown, 'w-1/12 px-4 max-md:w-1/5': ! showingNavigationDropdown}" >
+                        <div class="flex items-center bg-primary max-md:px-4 transition-all duration-500 delay-1000" :class="{' w-1/5  max-lg:w-2/6 max-md:w-2/5 max-md:items-center ': showingNavigationDropdown, 'w-1/12 px-4 max-md:w-1/5': ! showingNavigationDropdown}" >
                             <div class="w-32 m-auto">
                                 <img src="/assets/img/logo-white.png" alt="Logo Charlie Solutions"/>
                             </div>

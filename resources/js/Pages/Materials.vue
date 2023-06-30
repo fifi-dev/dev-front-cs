@@ -74,20 +74,27 @@ import DataCard from '@/Components/DataCard.vue';
                     </DataCard>
                 </div>
                 <!-- search & Filters-->
-                <div class="bg-white shadow-xl sm:rounded-lg p-4 flex items-center max-lg:block">
+                <div class="bg-white shadow-xl sm:rounded-lg p-4 pt-1 flex flex-wrap items-center max-lg:block">
                     <!-- search zone form -->
-                    <div class="w-2/5 max-lg:w-full">
-                        <TextInput
+                    <div class="w-2/5 max-lg:w-full mt-3 mr-3">
+                        <label for="searchZone" class="relative">
+                            <TextInput
                             id="searchZone"
                             v-model="searchValue"
                             type="search"
-                            class="mt-1 block bg-gray-100 !text-gray-900 w-full rounded-none"
+                            class="mt-1 block bg-gray-100 !text-gray-400 w-full rounded-none border-transparent"
                             required
                             autofocus
                             placeholder="Rechercher une zone"
                         />
+                        <div class="absolute top-2 right-4 text-gray-400">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                            </svg>
+                        </div>
+                        </label>
                     </div>
-                    <div class="flex ml-3 w-3/5 max-lg:w-full overflow-hidden max-lg:mt-4 justify-end max-lg:justify-start max-md:grid max-md:grid-cols-2 gap-4 items-center h-full">
+                    <div class="flex max-lg:w-fit mt-4 justify-end max-lg:justify-start max-md:grid max-md:grid-cols-2 gap-4 items-center h-full">
                         <!-- Current Zone -->
                         <div  class=" relative mr-3 max-md:mr-0">
                             <Dropdown align="right" width="48">
@@ -102,15 +109,11 @@ import DataCard from '@/Components/DataCard.vue';
                                 <template #content>
                                     <!-- Option -->
                                     <DropdownLink :href="route('home')">
-                                        Option 1
+                                        Chalie Connect
                                     </DropdownLink>
                                     <!-- Option -->
                                     <DropdownLink :href="route('home')">
-                                        Option 2
-                                    </DropdownLink>
-                                    <!-- Option -->
-                                    <DropdownLink :href="route('home')">
-                                        Option 3
+                                        Nom de zone	
                                     </DropdownLink>
                                 </template>
                             </Dropdown>
@@ -129,15 +132,11 @@ import DataCard from '@/Components/DataCard.vue';
                                 <template #content>
                                     <!-- Option -->
                                     <DropdownLink :href="route('home')">
-                                        Option 1
+                                        Détecté
                                     </DropdownLink>
                                     <!-- Option -->
                                     <DropdownLink :href="route('home')">
-                                        Option 2
-                                    </DropdownLink>
-                                    <!-- Option -->
-                                    <DropdownLink :href="route('home')">
-                                        Option 3
+                                        Non Détecté
                                     </DropdownLink>
                                 </template>
                             </Dropdown>
@@ -156,15 +155,11 @@ import DataCard from '@/Components/DataCard.vue';
                                 <template #content>
                                     <!-- Option -->
                                     <DropdownLink :href="route('home')">
-                                        Option 1
+                                        Conforme
                                     </DropdownLink>
                                     <!-- Option -->
                                     <DropdownLink :href="route('home')">
-                                        Option 2
-                                    </DropdownLink>
-                                    <!-- Option -->
-                                    <DropdownLink :href="route('home')">
-                                        Option 3
+                                        À réviser
                                     </DropdownLink>
                                 </template>
                             </Dropdown>
@@ -183,15 +178,11 @@ import DataCard from '@/Components/DataCard.vue';
                                 <template #content>
                                     <!-- Option -->
                                     <DropdownLink :href="route('home')">
-                                        Option 1
+                                        Chantier Lille
                                     </DropdownLink>
                                     <!-- Option -->
                                     <DropdownLink :href="route('home')">
-                                        Option 2
-                                    </DropdownLink>
-                                    <!-- Option -->
-                                    <DropdownLink :href="route('home')">
-                                        Option 3
+                                        Nom de site
                                     </DropdownLink>
                                 </template>
                             </Dropdown>
@@ -210,15 +201,11 @@ import DataCard from '@/Components/DataCard.vue';
                                 <template #content>
                                     <!-- Option -->
                                     <DropdownLink :href="route('home')">
-                                        Option 1
+                                        Perceuse
                                     </DropdownLink>
                                     <!-- Option -->
                                     <DropdownLink :href="route('home')">
-                                        Option 2
-                                    </DropdownLink>
-                                    <!-- Option -->
-                                    <DropdownLink :href="route('home')">
-                                        Option 3
+                                        Nom du type
                                     </DropdownLink>
                                 </template>
                             </Dropdown>
