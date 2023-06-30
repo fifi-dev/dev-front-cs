@@ -1,6 +1,7 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
+import TextInput from '@/Components/TextInput.vue';
 import DataCard from '@/Components/DataCard.vue';
 
 </script>
@@ -69,8 +70,23 @@ import DataCard from '@/Components/DataCard.vue';
                         Non détectés
                     </DataCard>
                 </div>
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                    nbfjdjd
+                <!-- search & Filters-->
+                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4">
+                    <div>
+                        <form @submit.prevent="submit">
+                            <TextInput
+                                id="searchZone"
+                                type="search"
+                                class="mt-1 block w-full"
+                                required
+                                autofocus
+                                placeholder="Rechercher une zone"
+                            />
+                        </form> 
+                    </div>
+                    <div>
+
+                    </div>
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
 
          \App\Models\User::factory()->create([
-                'name' => 'Test',
+                'name' => 'Test Account',
                 'email' => 'test@example.com',
                 'password' => bcrypt('laravel_test'),
                 'profile_photo_path' => 'profile-photos/user.png',
