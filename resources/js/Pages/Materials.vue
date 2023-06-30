@@ -235,7 +235,7 @@ import DataCard from '@/Components/DataCard.vue';
                     </div>
                 </div>
                 <!-- Table with data -->
-                <div class="bg-white overflow-hidden overflow-x-scroll  shadow-xl sm:rounded-lg p-4 mt-4">
+                <div class="bg-white overflow-hidden overflow-x-scroll  shadow-xl sm:rounded-lg p-4 mt-4 mb-20">
                     <div class="flex items-center pl-6">
                         <!-- select All-->
                         <Checkbox :value="selectAll"/>
@@ -247,80 +247,112 @@ import DataCard from '@/Components/DataCard.vue';
                             Supprimer
                         </PrimaryButton>
                     </div>
-                    <div class="mt-3 mb-20">
+                    <div class="mt-3">
                         <!-- List of materials -->
                         <table class="min-w-full  ">
                             <thead>
                                 <tr>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                    <th  class="text-sm font-medium text-gray-900 px-3  py-4 text-left">
                                         <!-- Checkbox column -->
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                        Type de matériel
+                                    <th  class="text-sm font-medium text-gray-900 px-3  flex items-center py-4 text-left">
+                                        Type de matériel <svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 320 512" class="ml-2"><path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/></svg>
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                        Bague
+                                    <!--Rings Col-->
+                                    <th  class="text-sm font-medium text-gray-900 px-3 py-4 text-left">
+                                        <div class="flex items-center">
+                                            Bagues
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 320 512" class="ml-2"><path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/></svg>
+                                        </div>
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                        Capteur
+                                    <!-- Sensors Col -->
+                                    <th  class="text-sm font-medium text-gray-900 px-3  py-4 text-left">
+                                        <div class="flex items-center">
+                                            Capteur
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 320 512" class="ml-2"><path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/></svg>
+                                        </div>
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                        Statut
+                                    <!-- Status Col-->
+                                    <th  class="text-sm font-medium text-gray-900 px-3  py-4 text-left">
+                                        <div class="flex items-center">
+                                            Statut
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 320 512" class="ml-2"><path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/></svg>
+                                        </div>
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                        Zone actuelle
+                                    <!-- Current Areas Col-->
+                                    <th  class="text-sm font-medium text-gray-900 px-3  py-4 text-left">
+                                        <div class="flex items-center">
+                                            Zone actuelle
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 320 512" class="ml-2"><path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/></svg>
+                                        </div>
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                        Détection
+                                    <!-- Detection Col-->
+                                    <th  class="text-sm font-medium text-gray-900 px-3  py-4 text-left">
+                                        <div class="flex items-center">
+                                            Détection
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 320 512" class="ml-2"><path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/></svg>
+                                        </div>
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                        Site
+                                    <!-- Sites Col-->
+                                    <th  class="text-sm font-medium text-gray-900 px-3  py-4 text-left">
+                                        <div class="flex items-center">
+                                            Site
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 320 512" class="ml-2"><path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/></svg>
+                                        </div>
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                        État
+                                    <!-- State Col-->
+                                    <th  class="text-sm font-medium text-gray-900 px-3  py-4 text-left">
+                                        <div class="flex items-center">
+                                            État
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 320 512" class="ml-2"><path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/></svg>
+                                        </div>
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                        Prochain contrôle
+                                    <!-- Next Control Col-->
+                                    <th  class="text-sm font-medium text-gray-900 px-3  py-4 text-left">
+                                        <div class="flex items-center">
+                                            Prochain contrôle
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="0.8em" viewBox="0 0 320 512" class="ml-2"><path d="M137.4 41.4c12.5-12.5 32.8-12.5 45.3 0l128 128c9.2 9.2 11.9 22.9 6.9 34.9s-16.6 19.8-29.6 19.8H32c-12.9 0-24.6-7.8-29.6-19.8s-2.2-25.7 6.9-34.9l128-128zm0 429.3l-128-128c-9.2-9.2-11.9-22.9-6.9-34.9s16.6-19.8 29.6-19.8H288c12.9 0 24.6 7.8 29.6 19.8s2.2 25.7-6.9 34.9l-128 128c-12.5 12.5-32.8 12.5-45.3 0z"/></svg>
+                                        </div>
                                     </th>
-                                    <th scope="col" class="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                    <th  class="text-sm font-medium text-gray-900 px-3  py-4 text-left">
                                         <!-- Actions -->
                                     </th>
                                 </tr>
                             </thead>
                             <tbody >
                                 <tr >
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                         <Checkbox :value="selectAll"/>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        Perceuse
+                                    <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                        Perceuse 
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                         0002111
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                         C ID 2999
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                         <div class=" bg-gray-800 text-gray-300 px-2 py-1 text-center">
                                             Détecté
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                        Charlie Connect
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                         2023-06-12 16:34:51
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                         Chantier Lille
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                         <div class=" bg-gray-800 text-gray-300 text-center px-2 py-1">
                                             Conforme
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                    <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                         2023-06-12
                                     </td>
                                     <td class="flex items-center h-14">
