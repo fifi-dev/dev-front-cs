@@ -14,7 +14,8 @@ class MaterialController extends Controller
      */
     public function index()
     {
-        //
+        $materials = Material::all();
+        return response()->json($materials);
     }
 
     /**
@@ -35,7 +36,11 @@ class MaterialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $material = Material::create($request->post());
+        return response()->json([
+            'message'=>'Material Created Successfully!!',
+            'material'=>$material
+        ]);
     }
 
     /**
@@ -46,7 +51,7 @@ class MaterialController extends Controller
      */
     public function show(Material $material)
     {
-        //
+        return response()->json($material);
     }
 
     /**
@@ -69,7 +74,11 @@ class MaterialController extends Controller
      */
     public function update(Request $request, Material $material)
     {
-        //
+        $material->fill($request->post())->save();
+        return response()->json([
+            'message'=>'Material Updated Successfully!!',
+            'material'=>$material
+        ]);
     }
 
     /**
@@ -80,6 +89,9 @@ class MaterialController extends Controller
      */
     public function destroy(Material $material)
     {
-        //
+        $material->delete();
+        return response()->json([
+            'message'=>'Material Deleted Successfully!!'
+        ]);
     }
 }
