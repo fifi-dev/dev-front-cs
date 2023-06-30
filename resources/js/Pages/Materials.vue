@@ -7,7 +7,6 @@ import Dropdown from '@/Components/Dropdown.vue';
 import Checkbox from '@/Components/Checkbox.vue';
 import DataCard from '@/Components/DataCard.vue';
 
-
 </script>
 
 <template>
@@ -320,40 +319,40 @@ import DataCard from '@/Components/DataCard.vue';
                                 </tr>
                             </thead>
                             <tbody >
-                                <tr >
+                                <tr v-for="(material,key) in materials" :key="key" >
                                     <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                         <Checkbox :value="selectAll"/>
                                     </td>
                                     <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        Perceuse 
+                                        {{ material.type }} 
                                     </td>
                                     <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        0002111
+                                        {{ material.ring }}
                                     </td>
                                     <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        C ID 2999
+                                        {{ material.sensor }}
                                     </td>
                                     <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                         <div class=" bg-gray-800 text-gray-300 px-2 py-1 text-center">
-                                            Détecté
+                                            {{ material.status }}
                                         </div>
                                     </td>
                                     <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                       Charlie Connect
+                                        {{ material.current_area }}
                                     </td>
                                     <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        2023-06-12 16:34:51
+                                        {{ material.detection }}
                                     </td>
                                     <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        Chantier Lille
+                                        {{ material.site }}
                                     </td>
                                     <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
                                         <div class=" bg-gray-800 text-gray-300 text-center px-2 py-1">
-                                            Conforme
+                                            {{ material.state }}
                                         </div>
                                     </td>
                                     <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        2023-06-12
+                                        {{ material.next_control }}
                                     </td>
                                     <td class="flex items-center h-14">
                                         <PrimaryButton class="!px-2 bg-red-500 hover:bg-red-600">
@@ -398,23 +397,14 @@ export default {
     },
     methods:{
         async getMaterials(){
-            await this.axios.get('/api/materials').then(response=>{
+            await axios.get('/api/material')
+            .then((response)=>{
                 this.materials = response.data
-                console.log(this.materials)
             }).catch(error=>{
                 console.log(error)
                 this.materials = []
             })
         },
-        deleteCategory(id){
-            if(confirm("Are you sure to delete this category ?")){
-                this.axios.delete(`/api/material/${id}`).then(response=>{
-                    this.getMaterials()
-                }).catch(error=>{
-                    console.log(error)
-                })
-            }
-        }
     }
 }
 </script>
