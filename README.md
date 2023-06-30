@@ -78,7 +78,7 @@ for the database:
 
   ## 💬 Let's Talk about the project
 
-#### My toughts
+#### My thoughts
 
 "J'ai beaucoup appreciée integrer la maquette, cela m'a permis de stimuler ma creativité tout en prenant en compte le design déjà existant.
 Le design est bien malgré quelques détails (drapaux, couleurs des boutons). Cependant, L'UX de la maquette ne permet pas de comprendre clairement certains éléments "
