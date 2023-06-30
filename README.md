@@ -60,7 +60,7 @@ for the database:
 - [ ] Create a database named cs-bdd & run migratios:
 
   ```sh
-   php artisan migrate
+   php artisan migrate --seed
   ```
 
 - [ ] On a terminal, run :
