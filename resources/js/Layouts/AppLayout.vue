@@ -39,15 +39,15 @@ const logout = () => {
                 <div class="max-w-full mx-auto  ">
                     <div class="flex justify-between h-16">
                         <!-- Logo -->
-                        <div class="flex items-center w-1/6 max-md:w-2/6 bg-primary max-md:px-4" >
+                        <div class="flex items-center bg-primary max-md:px-4 transition-all" :class="{' w-1/5 max-lg:w-2/6 max-md:w-1/5 max-md:items-center ': showingNavigationDropdown, 'w-1/12 px-4 max-md:w-1/5': ! showingNavigationDropdown}" >
                             <div class="w-32 m-auto">
                                 <img src="/assets/img/logo-white.png" alt="Logo Charlie Solutions"/>
                             </div>
                         </div>
-                        <div class="flex max-md:justify-end justify-between w-5/6 items-center">
+                        <div class="flex max-md:justify-end justify-between w-4/5 max-lg:w-4/6 items-center" :class="{' w-1/5 max-lg:w-2/6 max-md:w-4/5' : showingNavigationDropdown, 'w-11/12 max-md:w-4/5 px-4': ! showingNavigationDropdown}">
                         <!-- Hamburger -->
                             <div class=" flex items-end">
-                                <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400  max-md:mr-4  focus:outline-none hover:scale-11  transition duration-150 ease-in-out" @click="showingNavigationDropdown = ! showingNavigationDropdown">
+                                <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 max-md:mr-4  focus:outline-none hover:scale-11  transition duration-150 ease-in-out" @click="showingNavigationDropdown = ! showingNavigationDropdown">
                                     <svg
                                         class="h-6 w-6"
                                         stroke="currentColor"
@@ -153,11 +153,11 @@ const logout = () => {
 
             <!-- Page Content -->
             <div class="flex">
-                <div class=" w-1/6 max-lg:w-2/6 max-md:absolute max-md:w-full transition ease-in-out duration-150" :class="{'block': showingNavigationDropdown, 'hidden': ! showingNavigationDropdown}">
+                <div class=" z-50 absolute w-1/5 max-lg:w-2/6  max-md:absolute max-md:w-full transition-all ease-in-out duration-150 " :class="{'block translate-x-0': showingNavigationDropdown, '-translate-x-full': ! showingNavigationDropdown}">
                     <!-- sidebar menu -->
                     <Menu />
                 </div>
-                <main :class="{'w-5/6 max-lg:w-4/6 max-md:hidden': showingNavigationDropdown, 'w-full max-md:mx-4': ! showingNavigationDropdown}" class="overflow-scroll h-screen transition ease-in-out duration-150 ">
+                <main :class="{' translate-x-1/4 max-lg:translate-x-1/3': showingNavigationDropdown, 'w-full max-md:mx-4': ! showingNavigationDropdown}" class="overflow-scroll h-screen transition ease-in-out duration-150 ">
                     <slot />
                 </main>
             </div>

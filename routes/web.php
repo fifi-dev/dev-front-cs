@@ -32,7 +32,7 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/', function () {
-        return Inertia::render('Dashboard', [
+        return Inertia::render('Materials', [
         ]);
     })->name('home');
     Route::get('/dashboard', function () {

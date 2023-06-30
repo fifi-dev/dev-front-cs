@@ -81,14 +81,14 @@ import DataCard from '@/Components/DataCard.vue';
                             <TextInput
                                 id="searchZone"
                                 type="search"
-                                class="mt-1 block w-full rounded-none"
+                                class="mt-1 block bg-gray-100 !text-gray-100 w-full rounded-none"
                                 required
                                 autofocus
                                 placeholder="Rechercher une zone"
                             />
                         </form> 
                     </div>
-                    <div class="flex w-3/5 max-lg:w-full max-lg:mt-4 justify-end max-lg:justify-start max-md:grid max-md:grid-cols-2 gap-4 items-center h-full">
+                    <div class="flex ml-3 w-3/5 max-lg:w-full max-lg:mt-4 justify-end max-lg:justify-start max-md:grid max-md:grid-cols-2 gap-4 items-center h-full">
                         <!-- Current Zone -->
                         <div  class=" relative mr-3 max-md:mr-0">
                             <Dropdown align="right" width="48">
@@ -347,7 +347,7 @@ import DataCard from '@/Components/DataCard.vue';
                                         {{ material.site }}
                                     </td>
                                     <td class="px-3 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                                        <div class="text-white text-center px-2 py-1" :class="[material.state=='Conforme' ? 'bg-green-600':'bg-red-600 ']">
+                                        <div class="text-white text-center px-2 py-1" :class="[material.state=='Conforme' ? 'bg-sky-600':'bg-red-600 ']">
                                             {{ material.state }}
                                         </div>
                                     </td>
