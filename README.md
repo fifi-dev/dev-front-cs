@@ -9,9 +9,6 @@ Implementation of a front-end website model.
 #### 💡 Features :
 
 - Working Sorting & Deletion
-  
-<p align="center">
-<img src="https://i.ibb.co/LSd76Dx/Capture-d-e-cran-2023-06-30-a-22-34-32.png" alt="Capture-d-e-cran-2023-06-30-a-22-34-32" border="0"> </p>
 
 - Crud : you can check the Material Controller 
 
