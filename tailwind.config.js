@@ -44,6 +44,15 @@ module.exports = {
 
                 'min-header': {'min': '910px'},
             },
+            keyframes: {
+                appearLeft: {
+                  '0%': { transform: 'translateX(-100%)' },
+                  '100%': { transform: 'translateX(0%)' },
+                }
+              },
+              animation: {
+                appearLeft: 'appearLeft 0.5s ease-in-out',
+              },
 
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],

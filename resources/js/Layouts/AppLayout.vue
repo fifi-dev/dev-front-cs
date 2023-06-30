@@ -33,18 +33,18 @@ const logout = () => {
 
         <Banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-gray-50">
             <div class="bg-white  " :class="{'max-md:bg-menu': showingNavigationDropdown, 'bg-white': ! showingNavigationDropdown}">
                 <!-- Header -->
                 <div class="max-w-full mx-auto  ">
                     <div class="flex justify-between h-16">
                         <!-- Logo -->
-                        <div class="flex items-center bg-primary max-md:px-4 transition-all" :class="{' w-1/5 max-lg:w-2/6 max-md:w-1/5 max-md:items-center ': showingNavigationDropdown, 'w-1/12 px-4 max-md:w-1/5': ! showingNavigationDropdown}" >
+                        <div class="flex items-center bg-primary max-md:px-4 transition-all duration-500 delay-500" :class="{' w-1/5  max-lg:w-2/6 max-md:w-2/5 max-md:items-center ': showingNavigationDropdown, 'w-1/12 px-4 max-md:w-1/5': ! showingNavigationDropdown}" >
                             <div class="w-32 m-auto">
                                 <img src="/assets/img/logo-white.png" alt="Logo Charlie Solutions"/>
                             </div>
                         </div>
-                        <div class="flex max-md:justify-end justify-between w-4/5 max-lg:w-4/6 items-center" :class="{' w-1/5 max-lg:w-2/6 max-md:w-4/5' : showingNavigationDropdown, 'w-11/12 max-md:w-4/5 px-4': ! showingNavigationDropdown}">
+                        <div class="flex max-md:justify-end justify-between items-center" :class="{' w-4/5  max-lg:w-4/6 max-md:w-3/5' : showingNavigationDropdown, 'w-11/12 max-md:w-4/5 px-4': ! showingNavigationDropdown}">
                         <!-- Hamburger -->
                             <div class=" flex items-end">
                                 <button class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 max-md:mr-4  focus:outline-none hover:scale-11  transition duration-150 ease-in-out" @click="showingNavigationDropdown = ! showingNavigationDropdown">
@@ -185,12 +185,12 @@ const logout = () => {
             </div>
 
             <!-- Page Content -->
-            <div class="flex">
-                <div class=" z-50 absolute w-1/5 max-lg:w-2/6  max-md:absolute max-md:w-full transition-all ease-in-out duration-150 " :class="{'block translate-x-0': showingNavigationDropdown, '-translate-x-full': ! showingNavigationDropdown}">
+            <div class="flex" >
+                <div class=" z-50 max-md:absolute animate-appearLeft ease-in-out transition-all duration-500 " :class="{'block  w-1/5  max-lg:w-2/6 max-md:w-full': showingNavigationDropdown, 'hidden -translate-x-full ': ! showingNavigationDropdown}">
                     <!-- sidebar menu -->
                     <Menu />
                 </div>
-                <main :class="{' translate-x-1/4 max-lg:translate-x-1/3': showingNavigationDropdown, 'w-full max-md:mx-4': ! showingNavigationDropdown}" class="overflow-scroll h-screen transition ease-in-out duration-150 ">
+                <main :class="{' w-4/5  max-lg:w-4/6  ': showingNavigationDropdown, 'w-full max-lg:w-full max-md:mx-4': ! showingNavigationDropdown}" class="overflow-scroll h-screen transition ease-in-out duration-150 ">
                     <slot />
                 </main>
             </div>
