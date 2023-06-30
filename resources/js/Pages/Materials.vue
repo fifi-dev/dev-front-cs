@@ -2,7 +2,10 @@
 import AppLayout from '@/Layouts/AppLayout.vue';
 import PrimaryButton from '@/Components/PrimaryButton.vue';
 import TextInput from '@/Components/TextInput.vue';
+import DropdownLink from '@/Components/DropdownLink.vue';
+import Dropdown from '@/Components/Dropdown.vue';
 import DataCard from '@/Components/DataCard.vue';
+
 
 </script>
 
@@ -71,21 +74,163 @@ import DataCard from '@/Components/DataCard.vue';
                     </DataCard>
                 </div>
                 <!-- search & Filters-->
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-4">
-                    <div>
+                <div class="bg-white shadow-xl sm:rounded-lg p-4 flex items-center max-lg:block">
+                    <!-- search zone form -->
+                    <div class="w-2/5 max-lg:w-full">
                         <form @submit.prevent="submit">
                             <TextInput
                                 id="searchZone"
                                 type="search"
-                                class="mt-1 block w-full"
+                                class="mt-1 block w-full rounded-none"
                                 required
                                 autofocus
                                 placeholder="Rechercher une zone"
                             />
                         </form> 
                     </div>
-                    <div>
+                    <div class="flex w-3/5 max-lg:w-full max-lg:mt-4 justify-end max-lg:justify-start max-md:grid max-md:grid-cols-2 gap-4 items-center h-full">
+                        <!-- Current Zone -->
+                        <div  class=" relative mr-3 max-md:mr-0">
+                            <Dropdown align="right" width="48">
+                                <template #trigger>
+                                        <button type="button" class="inline-flex items-center max-md:justify-between py-3 px-4  border text-sm leading-4 font-medium rounded-xs text-gray-500 border-gray-200 max-md:w-full  hover:text-gray-700 focus:outline-none active:text-gray-700 transition ease-in-out duration-150">
+                                            Zone actuelle
+                                            <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                            </svg>
+                                        </button>
+                                </template>
+                                <template #content>
+                                    <!-- Option -->
+                                    <DropdownLink :href="route('home')">
+                                        Option 1
+                                    </DropdownLink>
+                                    <!-- Option -->
+                                    <DropdownLink :href="route('home')">
+                                        Option 2
+                                    </DropdownLink>
+                                    <!-- Option -->
+                                    <DropdownLink :href="route('home')">
+                                        Option 3
+                                    </DropdownLink>
+                                </template>
+                            </Dropdown>
+                        </div>
+                        <!-- Status -->
+                        <div class=" relative mr-3 max-md:mr-0">
+                            <Dropdown align="right" width="48">
+                                <template #trigger>
+                                        <button type="button" class="inline-flex items-center max-md:justify-between py-3 px-4 max-md:w-full border text-sm leading-4 font-medium rounded-xs text-gray-500 border-gray-200  hover:text-gray-700 focus:outline-none active:text-gray-700 transition ease-in-out duration-150">
+                                            Statut
+                                            <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                            </svg>
+                                        </button>
+                                </template>
+                                <template #content>
+                                    <!-- Option -->
+                                    <DropdownLink :href="route('home')">
+                                        Option 1
+                                    </DropdownLink>
+                                    <!-- Option -->
+                                    <DropdownLink :href="route('home')">
+                                        Option 2
+                                    </DropdownLink>
+                                    <!-- Option -->
+                                    <DropdownLink :href="route('home')">
+                                        Option 3
+                                    </DropdownLink>
+                                </template>
+                            </Dropdown>
+                        </div>
+                        <!-- State -->
+                        <div class=" relative mr-3 max-md:mr-0">
+                            <Dropdown align="right" width="48">
+                                <template #trigger>
+                                        <button type="button" class="inline-flex items-center max-md:justify-between py-3 px-4 max-md:w-full border text-sm leading-4 font-medium rounded-xs text-gray-500 border-gray-200  hover:text-gray-700 focus:outline-none active:text-gray-700 transition ease-in-out duration-150">
+                                            Etat
+                                            <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                            </svg>
+                                        </button>
+                                </template>
+                                <template #content>
+                                    <!-- Option -->
+                                    <DropdownLink :href="route('home')">
+                                        Option 1
+                                    </DropdownLink>
+                                    <!-- Option -->
+                                    <DropdownLink :href="route('home')">
+                                        Option 2
+                                    </DropdownLink>
+                                    <!-- Option -->
+                                    <DropdownLink :href="route('home')">
+                                        Option 3
+                                    </DropdownLink>
+                                </template>
+                            </Dropdown>
+                        </div>
+                        <!-- site -->
+                        <div class=" relative mr-3 max-md:mr-0">
+                            <Dropdown align="right" width="48">
+                                <template #trigger>
+                                        <button type="button" class="inline-flex items-center max-md:justify-between py-3 px-4 max-md:w-full border text-sm leading-4 font-medium rounded-xs text-gray-500 border-gray-200  hover:text-gray-700 focus:outline-none active:text-gray-700 transition ease-in-out duration-150">
+                                            Site
+                                            <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                            </svg>
+                                        </button>
+                                </template>
+                                <template #content>
+                                    <!-- Option -->
+                                    <DropdownLink :href="route('home')">
+                                        Option 1
+                                    </DropdownLink>
+                                    <!-- Option -->
+                                    <DropdownLink :href="route('home')">
+                                        Option 2
+                                    </DropdownLink>
+                                    <!-- Option -->
+                                    <DropdownLink :href="route('home')">
+                                        Option 3
+                                    </DropdownLink>
+                                </template>
+                            </Dropdown>
+                        </div>
+                        <!-- type of material -->
+                        <div class=" relative mr-3 max-md:mr-0">
+                            <Dropdown align="right" width="48">
+                                <template #trigger>
+                                        <button type="button" class="inline-flex items-center max-md:justify-between py-3 px-4 max-md:w-full  border text-sm leading-4 font-medium rounded-xs text-gray-500 border-gray-200  hover:text-gray-700 focus:outline-none active:text-gray-700 transition ease-in-out duration-150">
+                                            Type de matériel
+                                            <svg class="ml-2 -mr-0.5 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+                                            </svg>
+                                        </button>
+                                </template>
+                                <template #content>
+                                    <!-- Option -->
+                                    <DropdownLink :href="route('home')">
+                                        Option 1
+                                    </DropdownLink>
+                                    <!-- Option -->
+                                    <DropdownLink :href="route('home')">
+                                        Option 2
+                                    </DropdownLink>
+                                    <!-- Option -->
+                                    <DropdownLink :href="route('home')">
+                                        Option 3
+                                    </DropdownLink>
+                                </template>
+                            </Dropdown>
+                        </div>
+                        <!-- Filters Button -->
+                        <PrimaryButton class=" bg-sky-700 rounded-xs">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 3c2.755 0 5.455.232 8.083.678.533.09.917.556.917 1.096v1.044a2.25 2.25 0 01-.659 1.591l-5.432 5.432a2.25 2.25 0 00-.659 1.591v2.927a2.25 2.25 0 01-1.244 2.013L9.75 21v-6.568a2.25 2.25 0 00-.659-1.591L3.659 7.409A2.25 2.25 0 013 5.818V4.774c0-.54.384-1.006.917-1.096A48.32 48.32 0 0112 3z" />
+                            </svg>
 
+                        </PrimaryButton>
                     </div>
                 </div>
             </div>
