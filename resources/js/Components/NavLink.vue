@@ -14,8 +14,8 @@ const showingNavigationDropdown = ref(false);
 
 const classes = computed(() => {
     return props.active
-        ? 'inline-flex items-center px-1 py-3 border-l-2 border-primary text-sm font-medium leading-5 bg-link-active focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out pr-9'
-        : 'inline-flex items-center px-1 py-1 border-l-2 border-transparent hover:boder-gray-800 text-sm font-medium leading-5 hover:bg-link-active  hover:border-gray-200 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 pr-9 ease-in-out';
+        ? 'inline-flex items-center px-1 py-3 border-l-4 border-primary text-sm font-medium leading-5 bg-link-active focus:outline-none focus:border-indigo-700 transition duration-150 ease-in-out pr-9'
+        : 'inline-flex items-center px-1 py-1 border-l-4 border-transparent hover:boder-gray-800 text-sm font-medium leading-5 hover:bg-link-active  hover:border-gray-200 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 pr-9 ease-in-out';
 });
 </script>
 
@@ -36,7 +36,7 @@ const classes = computed(() => {
         </div>
     </div>
     <!-- Sub Links-->
-    <div v-if="showingNavigationDropdown" class="text-white text-sm ml-20 mt-3 active:block">
+    <div v-if="showingNavigationDropdown" class="text-white text-sm ml-20 my-3 active:block">
         <ul class="list-disc">
             <slot name="subLinks" />
         </ul> 
