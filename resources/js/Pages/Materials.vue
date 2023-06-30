@@ -383,3 +383,38 @@ import DataCard from '@/Components/DataCard.vue';
         </div>
     </AppLayout>
 </template>
+
+<script>
+import axios from "axios";
+
+export default {
+    data(){
+        return {
+            materials:[]
+        }
+    },
+    mounted(){
+        this.getMaterials()
+    },
+    methods:{
+        async getMaterials(){
+            await this.axios.get('/api/materials').then(response=>{
+                this.materials = response.data
+                console.log(this.materials)
+            }).catch(error=>{
+                console.log(error)
+                this.materials = []
+            })
+        },
+        deleteCategory(id){
+            if(confirm("Are you sure to delete this category ?")){
+                this.axios.delete(`/api/material/${id}`).then(response=>{
+                    this.getMaterials()
+                }).catch(error=>{
+                    console.log(error)
+                })
+            }
+        }
+    }
+}
+</script>
